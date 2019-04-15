@@ -1,0 +1,35 @@
+<table style="width: 60%; margin: 0px auto;" class="table table-striped table-dark">
+			  <head>
+			    <tr>
+			      <th scope="col"> </th>
+			      <th scope="col">Name</th>
+			      <th scope="col">Age</th>
+			      <th scope="col">Special Powers</th>
+			      <th scope="col">Weakness</th>
+			      <th scope="col">Squad</th>
+			    </tr>
+			  </head>
+			  <body>
+			  	#if ($heroes)
+			  		#foreach ($hero in $heroes)
+					    <tr>
+					      <th scope="row"> $hero.getId() </th>
+
+					      </td>
+
+					      <td>	<a href="/hero/$hero.getId()">$hero.getNewName()</a> </td>
+					      <td>$hero.getNewAge()</td>
+					      <td>$hero.getNewSpecialPowers()</td>
+					      <td>$hero.getNewWeakness()</td>
+					      <td>none</td>
+					    </tr>
+					#end
+			    #else
+			    <tr>
+			    	<td>There are no Heroes added at the moment</td>
+			    </tr>
+
+			    #end
+
+			  </body>
+			</table>

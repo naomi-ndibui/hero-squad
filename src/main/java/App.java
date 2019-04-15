@@ -22,22 +22,32 @@ public class App {
          if (process.environment().get("PORT") != null) {
              port = Integer.parseInt(process.environment().get("PORT"));
          } else {
+<<<<<<< HEAD
              port = 4569;
+=======
+             port = 4567;
+>>>>>>> 23307334411a241bac43094bec77bd2008d9467e
          }
          port(port);
 
 
          get("/", (request, response) -> {
              Map<String, Object> model = new HashMap<String, Object>();
+<<<<<<< HEAD
              ArrayList<Hero> heroes=request.session().attribute("heroes");
              model.put("heroes",heroes);
+=======
+>>>>>>> 23307334411a241bac43094bec77bd2008d9467e
              model.put("template", "templates/addnewhero.vtl");
              return new ModelAndView(model, layout);
          },  new VelocityTemplateEngine());
 
          post("/heroes",(request,response)->{
              Map <String,Object> model = new HashMap<String,Object>();
+<<<<<<< HEAD
              ArrayList<Hero> heroes=request.session().attribute("heroes");
+=======
+>>>>>>> 23307334411a241bac43094bec77bd2008d9467e
              String name =request.queryParams("name");
              int age = Integer.parseInt(request.queryParams("age"));
              String specialPowers =request.queryParams("specialPowers");
@@ -47,7 +57,10 @@ public class App {
              return new ModelAndView(model,layout);
          },new VelocityTemplateEngine());
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 23307334411a241bac43094bec77bd2008d9467e
          get("/heroes",(request,response)->{
              Map <String,Object> model = new HashMap<String,Object>();
              model.put("heroes",Hero.all());
@@ -55,16 +68,23 @@ public class App {
              return new ModelAndView(model,layout);
          },new VelocityTemplateEngine());
 
+<<<<<<< HEAD
 
          get("/hero/:id",(request,response)->{
              Map<String,Object>	model = new HashMap<String,Object>();
              Hero hero =Hero.find(Integer.parseInt(request.params(":id")));
              model.put("heroes",request.session().attributes());
+=======
+         get("/hero/:id",(request,response)->{
+             Map<String,Object>	model = new HashMap<String,Object>();
+             Hero hero =Hero.find(Integer.parseInt(request.params(":id")));
+>>>>>>> 23307334411a241bac43094bec77bd2008d9467e
              model.put("hero",hero);
              model.put("template","templates/hero.vtl");
 
              return new ModelAndView(model,layout);
          },new VelocityTemplateEngine());
+<<<<<<< HEAD
 
          get("/addsquad",(request,response)->{
              Map <String,Object> model = new HashMap<String,Object>();
@@ -74,5 +94,7 @@ public class App {
          },new VelocityTemplateEngine());
 
 
+=======
+>>>>>>> 23307334411a241bac43094bec77bd2008d9467e
      }
 }
