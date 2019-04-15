@@ -25,7 +25,7 @@ public class HeroTest {
     @Test
     public void Hero_instantiatesWithSpecialPowers_String() {
         Hero myHero = new Hero("Mike" ,16 ,"fire" ,"cats");
-        assertEquals("fire", myHero.getNewSpecialpowers());
+        assertEquals("fire", myHero.getNewSpecialPowers());
     }
     @Test
     public void Hero_instantiatesWithWeakness_String() {
@@ -35,7 +35,7 @@ public class HeroTest {
     @Test
     public void all_returnsAllInstancesOfHero_true() {
         Hero firstHero = new Hero("Mike" ,16 ,"fire" ,"cats");
-        Hero secondHero = new Hero("Mike" ,16 ,"fire" ,"cats");
+        Hero secondHero = new Hero("cmfdbjk" ,4 ,"air" ,"dogs");
         assertEquals(true, Hero.all().contains(firstHero));
         assertEquals(true, Hero.all().contains(secondHero));
     }
