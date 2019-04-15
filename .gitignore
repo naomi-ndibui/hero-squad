@@ -13,7 +13,6 @@
 *.dmg
 *.gz
 *.iso
-*.jar
 *.rar
 *.tar
 *.zip
@@ -35,4 +34,3 @@ Thumbs.db
 # Java and Gradle #
 ############
 build/
-.gradle/
