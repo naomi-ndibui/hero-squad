@@ -27,14 +27,17 @@ public class Squad {
     }
 
     public String getmCause() {
+
         return mCause;
     }
 
     public static List<Squad> all() {
+
         return instances;
     }
 
     public int getmId() {
+
         return mId;
     }
 
@@ -51,6 +54,7 @@ public class Squad {
         instances.clear();
     }
     public List<Hero> getHeroes() {
+
         return mHeros;
     }
     public void addHero(Hero hero) {
