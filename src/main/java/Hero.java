@@ -26,7 +26,7 @@ public class Hero {
         return newAge;
     }
 
-    public String getNewSpecialpowers() {
+    public String getNewSpecialPowers() {
 
         return newSpecialPowers;
     }
