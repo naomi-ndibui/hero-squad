@@ -47,6 +47,7 @@ public class App {
              return new ModelAndView(model,layout);
          },new VelocityTemplateEngine());
 
+
          get("/heroes",(request,response)->{
              Map <String,Object> model = new HashMap<String,Object>();
              model.put("heroes",Hero.all());
@@ -54,20 +55,16 @@ public class App {
              return new ModelAndView(model,layout);
          },new VelocityTemplateEngine());
 
-//         get("/hero/:id",(request,response)->{
-//             Map<String,Object>	model = new HashMap<String,Object>();
-//             Hero hero =Hero.find(Integer.parseInt(request.params(":id")));
-//             model.put("heroes",request.session().attributes());
 
          get("/hero/:id",(request,response)->{
-             Map<String,Object>	model = new HashMap<String,Object>();
+             Map<String,Object>	model = new HashMap<>();
              Hero hero =Hero.find(Integer.parseInt(request.params(":id")));
+             model.put("heroes",request.session().attributes());
              model.put("hero",hero);
              model.put("template","templates/hero.vtl");
 
              return new ModelAndView(model,layout);
          },new VelocityTemplateEngine());
-
 
          get("/addsquad",(request,response)->{
              Map <String,Object> model = new HashMap<String,Object>();
@@ -76,6 +73,6 @@ public class App {
              return new ModelAndView(model,layout);
          },new VelocityTemplateEngine());
 
-     }
-     }
 
+     }
+}
